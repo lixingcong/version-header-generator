@@ -1,1 +1,0 @@
-Hello! Z:/version-header-generator/cmake
