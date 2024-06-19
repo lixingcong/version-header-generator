@@ -21,8 +21,6 @@ string(TIMESTAMP CMAKE_EXECUTE_TIME "%Y-%m-%d %H:%M")
 
 find_package(Git)
 if(Git_FOUND)
-  message("Use git: ${GIT_EXECUTABLE}")
-
   # Cmd of git
   macro(RunGitCommand)
       execute_process(COMMAND
