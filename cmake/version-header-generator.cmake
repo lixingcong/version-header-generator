@@ -1,5 +1,6 @@
-# CMAKE_CURRENT_SOURCE_DIR is the source code dir
-# Alternatively, you can use CMAKE_CURRENT_LIST_DIR, the path of CMakeLists.txt
+# CMAKE_CURRENT_SOURCE_DIR:   source code dir
+# CMAKE_CURRENT_BINARY_DIR:   bin output dir
+# CMAKE_CURRENT_LIST_DIR:     the path of CMakeLists.txt
 
 # Set the output file
 set(VERSION_FILE ${CMAKE_CURRENT_SOURCE_DIR}/version.h)
@@ -82,7 +83,8 @@ if (NOT "${VERSION_CONTENT}" STREQUAL "${VERSION_CONTENT_OLD}")
     file(WRITE ${VERSION_FILE} ${VERSION_CONTENT})
 endif()
 
+# Use CMAKE_CURRENT_BINARY_DIR if you like...
 configure_file(
-  ${CMAKE_CURRENT_LIST_DIR}/Changelog.txt.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/Changelog.txt
+    ${CMAKE_CURRENT_LIST_DIR}/Changelog.txt.in
+    ${CMAKE_CURRENT_BINARY_DIR}/Changelog.txt
 )
