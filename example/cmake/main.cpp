@@ -7,9 +7,14 @@
 
 int main()
 {
-	std::cout << "version.h: CMAKE_EXECUTE_TIME=" << CMAKE_EXECUTE_TIME << std::endl;
+#define OUT(x) std::cout << "version.h: " #x << " = " << x << std::endl
+	OUT(APP_VERSION);
+	OUT(GIT_BRANCH);
+	OUT(GIT_VERSION_DESCRIBE);
+	OUT(GIT_COMMIT_SHA);
+	OUT(GIT_COMMIT_TIME);
+	OUT(CMAKE_EXECUTE_TIME);
 
-	std::cout << "Read changelog:" << std::endl;
 	std::string   line;
 	std::ifstream fs("Changelog.txt");
 	while (std::getline(fs, line))
