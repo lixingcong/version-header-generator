@@ -27,7 +27,7 @@ DEFINES += GIT_COMMIT_TIME=\\\"$$GIT_COMMIT_TIME\\\"
 
 # QMake timestamp
 win32 {
-    QMAKE_EXECUTE_TIME = "WorkInProgress"
+    QMAKE_EXECUTE_TIME = $$system("$${PWD}\..\script\windows-date.cmd")
 } else {
     QMAKE_EXECUTE_TIME = $$system("date +%Y-%m-%d_%H:%M")
 }
