@@ -1,0 +1,8 @@
+target("version-header-generator")
+    set_kind("phony")
+	on_load(function (target)
+		local XMAKE_EXECUTE_TIME = os.date('"%Y-%m-%d %H:%M:%S"')
+		target:set("configvar", "XMAKE_EXECUTE_TIME", XMAKE_EXECUTE_TIME)		
+    end)
+	set_configdir("$(projectdir)")
+    add_configfiles("version.h.in")
